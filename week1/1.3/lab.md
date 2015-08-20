@@ -9,20 +9,20 @@ the end of this exercise.
 - Log into your [Amazon account](http://aws.amazon.com/console/) and
   create an S3 bucket using the GUI.
 
-  ![image](images/s3-create-bucket.png)
+  ![image](https://s3-us-west-2.amazonaws.com/dsci6007/assets/s3-create-bucket.png)
 
 - **The bucket name must be:** (1) Unique (no one has ever used it).
   Prefix it with a unique id. (2) Lowercase. (3) Must not have
   underscore.
    
-- Upload (using the GUI) `../../data/shakespeare-sonnets.txt` to your
+- Copy (using the GUI) `https://s3-us-west-2.amazonaws.com/dsci6007/data/shakespeare-sonnets.txt` to your
   bucket. 
   
-  ![image](images/s3-upload.png)
+  ![image](https://s3-us-west-2.amazonaws.com/dsci6007/assets/s3-upload.png)
   
 - Note the link to the file.
    
-  ![image](images/s3-file-link.png)
+  ![image](https://s3-us-west-2.amazonaws.com/dsci6007/assets/s3-file-link.png)
 
 - Write a program that reads the file from S3.
 
