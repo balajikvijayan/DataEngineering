@@ -19,7 +19,7 @@ Here's the [postgres docs](http://www.postgresql.org/docs/9.3/interactive/), whi
 
     If you don't have homebrew, go [here](http://brew.sh/).
 
-2. After the installation is complete, use Spotlight to search for `postgres` and open the Application. It will ask you if you want to move it to the Applications folder, say "Move it"
+2. After the installation is complete, use Spotlight to search for `Postgres` and open the Application. It will ask you if you want to move it to the Applications folder, say "Move it"
 
 
 ## Setting up psql on a Mac
@@ -28,8 +28,7 @@ Here's the [postgres docs](http://www.postgresql.org/docs/9.3/interactive/), whi
 
 2. Open terminal configurations:
 
-    * `subl `~/.bashrc`
-    * if you are using zsh: `subl .zshrc` (if you are on your personal computer and don't know what this is, you are probably using bash, which is what's above)
+    * `nano ~/.bash_profile`
 
 3. Insert the following line at the end of the file and save the file.
 
