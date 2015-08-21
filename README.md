@@ -26,7 +26,8 @@ DSCI6003: Machine Learning and Data Analysis
 
 Standards
 --------------------------------------------------------------  
-By the end of this course, you will be able to:
+By the end of this course, you will be able to:  
+
 * Write complex queries including joins and aggregate functions
 * Define a normalized relational data model
 * Process data in the cloud (*i.e.* EC2)
@@ -59,7 +60,8 @@ By the end of this course, you will be able to:
 
 Structure of the Class
 --------------------------------------------------------------  
-A typical class will follow this structure:
+A typical class will follow this structure:  
+
 * **4:00pm-4:20pm: RAT**
     - The RAT is a readiness assessment to make sure you are prepared for class
     - Students will perform the quiz once individually then once as a team
@@ -124,6 +126,7 @@ Students who are dishonest in any class assignment or exam will receive an "F" i
 
 Tentative Schedule
 --------------------------------------------------------------  
+
 1. Relational Databases and the Cloud
     1. Structured Query Language
     2. Relational Data Model

@@ -20,7 +20,9 @@ Before class:
 Before class:
     - Complete: [`1.1/lab.md`](https://github.com/zipfian/DSCI6007-student/blob/master/week1/1.1/lab.md)
     - Make sure you are familiar with advanced data types such as [arrays](http://www.postgresql.org/docs/current/static/arrays.html) and [functions](http://www.postgresql.org/docs/current/static/functions.html) like [unnest](http://www.postgresql.org/docs/current/static/functions-array.html)
-    - Optional: [C.J. Date's SQL and Relational Theory Master Class](http://shop.oreilly.com/product/0636920002710.do)
+    - Optional: 
+        + [A Simple Guide to Five Normal Forms in Relational Database Theory](http://www.bkent.net/Doc/simple5.htm)
+        + [C.J. Date's SQL and Relational Theory Master Class](http://shop.oreilly.com/product/0636920002710.do)
 
 3. __Cloud Computing__  
 Before class:     
