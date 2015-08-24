@@ -27,6 +27,7 @@ In this repo, there's a SQL dump of the data we'll be using today.
 1. Navigate to where you cloned this very repository and run the following command to import the database:
 
     ```
+    wget https://s3-us-west-2.amazonaws.com/dsci6007/data/readychef.sql
     psql readychef < readychef.sql
     ```
 
