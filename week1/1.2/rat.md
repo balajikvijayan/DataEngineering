@@ -69,7 +69,7 @@ In practice you may not have a place to test your queries outside of running the
     To get this csv file (say it's called `log.csv`) into your SQL table:
 
     ```sql
-    COPY log FROM '/Users/giovanna/github/recommendation-systems-soln/log.csv' CSV;
+    COPY log FROM '~/github/recommendation-systems-soln/log.csv' CSV;
     ```
 
     Note that you need to use the full path. To get the full path of your current directory from the command line, run `pwd`.
