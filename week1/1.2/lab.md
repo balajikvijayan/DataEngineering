@@ -1,7 +1,7 @@
 Data Modeling Practice
 ----------------------
 
-In this exercise, you will demonstrate your understanding of normalization by designing a data model. You have two files: `data/dbip-city-2015-07.csv` (henceforth `dbip`) and `data/link.log`.  
+In this exercise, you will demonstrate your understanding of normalization by designing a data model. You have two files: `https://s3-us-west-2.amazonaws.com/dsci6007/data/dbip-city-2015-07.csv` (henceforth `dbip`) and `https://s3-us-west-2.amazonaws.com/dsci6007/data/link.log`.  
 `dbip` is essentially a lookup table to find the geolocation for any given IP address. However, because there are over four billion IPv4 addresses (to say nothing of IPv6), each row represents a range. For example:
 
     ip_start     	ip_end     	country 	stateprov   	city
