@@ -93,8 +93,9 @@ the end of this exercise.
   Prefix it with a unique id. (2) Lowercase. (3) Must not have
   underscore.
    
-- Upload (using the GUI) `../data/shakespeare-sonnets.txt` to your
-  bucket. 
+- Upload (using the GUI)
+  <http://dsci6007.s3.amazonaws.com/data/shakespeare-sonnets.txt> to
+  your bucket. 
   
   ![image](images/s3-upload.png)
   
