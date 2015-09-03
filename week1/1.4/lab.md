@@ -23,6 +23,10 @@ ENABLE_NOTEBOOK = True
 # Set a password for the notebook for increased security
 # This is optional but *highly* recommended
 NOTEBOOK_PASSWD = a-secret-password
+
+[plugin pypkginstaller]
+setup_class = starcluster.plugins.pypkginstaller.PyPkgInstaller
+packages = ipython, sklearn
 ```
 
 Set `CLUSTER_SIZE` to `3` for more memory *(see [aws.amazon.com/ec2/instance-types](http://aws.amazon.com/ec2/instance-types/) for details)*:
@@ -31,7 +35,7 @@ Set `CLUSTER_SIZE` to `3` for more memory *(see [aws.amazon.com/ec2/instance-typ
 # number of ec2 instances to launch
 CLUSTER_SIZE = 3
 NODE_IMAGE_ID = ami-6b211202
-PLUGINS = ipcluster
+PLUGINS = pypkginstaller, ipcluster
 SPOT_BID = 0.10
 ```
 Also set `SPOT_BID` to `0.10` (or less?) to save \$\$\$ *(see [aws.amazon.com/ec2/purchasing-options/spot-instances](http://aws.amazon.com/ec2/purchasing-options/spot-instances/) for details)*
