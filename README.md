@@ -37,7 +37,6 @@ By the end of this course, you will be able to:
 * Evaluate when it's appropriate to apply Lambda Architecture
 * Define a fact-based graph schema
 * Process data using Hadoop Map Reduce
-* Inspect Hadoop configuration using Ambari
 * Ingest data into Spark, transform it, and write it back out again
 * Use Spark to aggregate & process key-value pair
 * Develop file schema and stage data for batch processing in HDFS
@@ -104,7 +103,7 @@ We will be using Galvanize's Mastery Tracker which can be found at [students.gal
 Course Requirements
 --------------------------------------------------------------  
 ### Attendance
-Students are required to attend every class. This is necessary both for your own grade and for your classmates. If you do not attend, then one of your colleagues will not have a pair. It is very important you attend each class. If you cannot, please let us know as early as possible. 
+Students are required to attend every class. It is very important you attend each class. If you cannot, please let us know as early as possible. 
 
 ### Lab Exercises  
 Participation in and completion of lab exercises is a requirement for this course. Each unit includes exercises to provide practice applying techniques discussed in class and to reveal deficiencies in understanding in preparation for skills tests.  
@@ -137,8 +136,8 @@ Tentative Schedule
     3. Intro to Lambda Architecture
     4. Serialization Frameworks and Fact-Based Data Models
 3. Map/Reduce and Spark
-    1. Hadoop MapReduce
-    2. Monitoring with Ambari
+    1. Project Proposals
+    2. Hadoop MapReduce
     3. Intro to Spark
     4. Spark II
 4. Batch Layer
