@@ -1,0 +1,56 @@
+######################################################################################
+#                                                                                    #
+# To build: docker build -t ubuntu:scribengin directory                              # 
+# To run:   docker run -t -i ubuntu:scribengin  /bin/bash                            #
+#                                                                                    #
+######################################################################################
+
+
+FROM centos:7
+MAINTAINER Galvanize
+
+RUN echo "Expose SSH port"
+EXPOSE 22 
+
+RUN echo "Install openssh"
+RUN yum -y install openssl openssh-server openssh-server passwd shadow-utils sudo && yum clean all
+
+RUN echo "Configure root Account"
+RUN mkdir /var/run/sshd
+RUN echo 'root:root' | chpasswd
+
+
+RUN echo "SSH login fix for Docker"
+RUN sed -i 's/PermitRootLogin without-password/PermitRootLogin yes/' /etc/ssh/sshd_config
+RUN sed 's@session\s*required\s*pam_loginuid.so@session optional pam_loginuid.so@g' -i /etc/pam.d/sshd
+ENV NOTVISIBLE "in users profile"
+RUN echo "export VISIBLE=now" >> /etc/profile
+RUN echo "PermitUserEnvironment yes" >> /etc/ssh/sshd_config
+
+RUN echo "Setup neverwinterdp user with sudo-rights (no password needed)"
+RUN useradd -m -d /home/neverwinterdp -s /bin/bash -c "neverwinterdp user" -p $(openssl passwd -1 neverwinterdp)  neverwinterdp
+
+RUN echo neverwinterdp ALL=\(ALL\) NOPASSWD: ALL >> /etc/sudoers
+RUN echo root ALL=\(ALL\) NOPASSWD: ALL >> /etc/sudoers
+RUN chown -R neverwinterdp:neverwinterdp /opt
+
+
+
+RUN echo "Sets up public keys for ssh for root user.  Assumes your public keys are stored in ./tmp"
+RUN mkdir -p /root/.ssh
+RUN chmod 700 /root/.ssh
+ADD tmp/authorized_keys /root/.ssh/authorized_keys
+RUN chmod 644 /root/.ssh/authorized_keys
+
+RUN echo "Sets up public keys for ssh for neverwinterdp user.  Assumes your public keys are stored in ./tmp"
+RUN mkdir -p /home/neverwinterdp/.ssh
+RUN chown -R neverwinterdp:neverwinterdp /home/neverwinterdp/.ssh
+RUN chmod 700 /home/neverwinterdp/.ssh
+ADD tmp/authorized_keys /home/neverwinterdp/.ssh/authorized_keys
+RUN chmod 644 /home/neverwinterdp/.ssh/authorized_keys
+
+
+
+RUN ssh-keygen -A
+RUN echo "Start sshd service"
+CMD ["/usr/sbin/sshd", "-D"]

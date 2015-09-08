@@ -1,0 +1,2 @@
+[local]
+test ansible_ssh_host=172.17.0.132 ansible_ssh_user=gstudent

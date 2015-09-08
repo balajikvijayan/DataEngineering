@@ -1,0 +1,24 @@
+---
+## Downloading repository files
+
+# HDP
+
+- name: Check if Hadoop Repository - HDP is already downloaded
+  stat: path={{ hadoop_repository_file_hdp  }}
+  register: downloaded_hdp
+
+- name: Downloading Hadoop Repository repo
+  get_url: url={{ hadoop_repository_repo_url_hdp  }} dest={{ hadoop_repository_file_hdp }}
+  when: downloaded_hdp.stat.exists == false
+  sudo: true
+
+#Ambari
+
+- name: Check if Hadoop Repository - Ambari is already downloaded
+  stat: path={{ hadoop_repository_file_ambari  }}
+  register: downloaded_ambari
+
+- name: Downloading Hadoop Repository - Ambari 
+  get_url: url={{ hadoop_repository_repo_url_ambari  }} dest={{ hadoop_repository_file_ambari }}
+  when: downloaded_ambari.stat.exists == false
+  sudo: true

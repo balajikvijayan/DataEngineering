@@ -1,0 +1,11 @@
+{
+  "Image" : {
+    "Name" : "CentOS"
+  },
+  "Ports" : [
+    {
+      "ContainerPort" : "80"
+    }
+  ]
+}
+

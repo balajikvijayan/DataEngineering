@@ -1,0 +1,8 @@
+- name: docker image control
+  local_action:
+    module: docker
+    docker_url: "tcp://somehost:4243"
+    image: "capttofu/percona_xtradb"
+    name: "db"
+    state: "present"
+    publish_all_ports: yes

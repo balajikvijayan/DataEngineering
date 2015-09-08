@@ -1,0 +1,5 @@
+127.0.0.1   localhost localhost.localdomain localhost4 localhost4.localdomain4
+::1         localhost localhost.localdomain localhost6 localhost6.localdomain6
+192.168.70.101 ambari1.nvent.galvanize ambari1
+192.168.70.102 ambari2.nvent.galvanize ambari2
+192.168.70.103 ambari3.nvent.galvanize ambari3
