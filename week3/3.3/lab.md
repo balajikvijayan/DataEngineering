@@ -76,7 +76,7 @@ be using Spark in local mode.
    each line as an item and read it in as string.**
    
    ```python
-   file_rdd = sc.textFile('data/toy_data.txt')
+   file_rdd = sc.textFile('https://s3-us-west-2.amazonaws.com/dsci/6007/data/toy_data.txt')
    ```
 
 3. RDDs are lazy so they do not load the data from disk unless it is
