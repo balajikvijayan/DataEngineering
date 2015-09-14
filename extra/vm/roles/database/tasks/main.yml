@@ -1,0 +1,5 @@
+# install postgres
+
+- name: Install Postgres
+  yum: name=openjdk-7-jdk state=present
+

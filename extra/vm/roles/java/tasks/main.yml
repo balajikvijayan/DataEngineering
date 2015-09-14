@@ -1,0 +1,19 @@
+- name: Download JDK (CentOS)
+  shell: "wget --quiet -O {{ jdk_download_folder }}/{{ jdk_archive }} {{ jdk_download_url }}"
+  sudo: yes
+  args:
+    creates: '{{ jdk_download_folder }}/{{ jdk_archive }}'
+
+- name: Install JDK (CentOS)
+  shell: "yum -y --nogpgcheck localinstall {{jdk_download_folder}}/{{ jdk_archive }}" 
+  args:
+    creates: /usr/java
+  sudo: yes
+
+- name: symlink java (CentOS)
+  file: src=/usr/java/default/bin/java dest=/usr/bin/java state=link
+  sudo: yes
+
+- name: symlink javac (CentOS)
+  file: src=/usr/java/default/bin/javac dest=/usr/bin/javac state=link
+  sudo: yes

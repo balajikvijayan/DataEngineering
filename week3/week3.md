@@ -7,7 +7,8 @@ Week 3: Map/Reduce and Spark
     - **Resources:**
         + [lambda-architecture.net](http://lambda-architecture.net/)
 
-2. __Hadoop MapReduce__
+2. __Hadoop MapReduce__ 
+    - **Before class:** Read [Map-Reduce Intro](https://github.com/zipfian/DSCI6007-student/blob/master/week3/3.2/intro.md)
     - **Standard:** Process data using Hadoop MapReduce
         + Select appropriate key for shuffle/sort
         + Write mapper function

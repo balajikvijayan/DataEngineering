@@ -1,0 +1,61 @@
+---
+- hosts: all
+  remote_user: gstudent
+  sudo: yes
+  roles:
+    - java
+    - hadoop
+  # vars:
+    # jdk_download_url: "https://s3-us-west-2.amazonaws.com/nvent-repo/rpm/jdk/8u45/jdk-8u45-linux-x64.rpm"
+    # jdk_download_folder: "/opt"
+    # jdk_archive: "jdk-8u45-linux-x64.rpm"
+
+  # tasks:
+  # - name: Download JDK (CentOS)
+  #   shell: "wget --quiet -O {{ jdk_download_folder }}/{{ jdk_archive }} {{ jdk_download_url }}"
+  #   sudo: yes
+  #   args:
+  #     creates: '{{ jdk_download_folder }}/{{ jdk_archive }}'
+
+  # - name: Install JDK (CentOS)
+  #   shell: "yum -y --nogpgcheck localinstall {{jdk_download_folder}}/{{ jdk_archive }}" 
+  #   args:
+  #     creates: /usr/java
+  #   sudo: yes
+
+  # - name: symlink java (CentOS)
+  #   file: src=/usr/java/default/bin/java dest=/usr/bin/java state=link
+  #   sudo: yes
+
+  # - name: symlink javac (CentOS)
+  #   file: src=/usr/java/default/bin/javac dest=/usr/bin/javac state=link
+  #   sudo: yes
+
+  vars:
+    dbname: gdb
+    # dbuser: gdbuser
+    dbuser: postgres
+    # dbpassword: gdbpwd
+    dbpassword: 
+
+  tasks:
+  - name: Install postgresql with dependencies
+    yum: pkg={{item}} state=installed
+    with_items:
+        - postgresql
+        # - libpq-dev
+        - python-psycopg2
+
+  # - name: PostgreSQL | Ensure PostgreSQL is running
+  #   service:
+  #     name: postgresql
+  #     state: started
+
+  # - service: name=ssh state=started
+  # - name: ensure database is created
+  #   postgresql_db: name={{dbname}}
+
+  # - name: ensure user has access to database
+  #   postgresql_user: db={{dbname}} name={{dbuser}} password={{dbpassword}} priv=ALL
+
+

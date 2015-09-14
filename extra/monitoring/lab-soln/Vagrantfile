@@ -1,0 +1,37 @@
+# -*- mode: ruby -*-
+# vi: set ft=ruby :
+
+Vagrant.configure(2) do |config|
+config.vm.box = "chef/centos-7.0"
+
+  #Should 4GB RAM to each virtual machine, which is recommended for Hadoop clusters.
+  #However allocating 2GB RAM instead because of memory issues on Mac.
+  config.vm.provider :virtualbox do |vb|
+    vb.customize ["modifyvm", :id, "--memory", 2048]
+  end
+
+  #bootstrap.sh script is for setting up the hosts file and authorized keys.
+  config.vm.provision :shell, :path => "bootstrap.sh"
+
+#ambari1 will be the ambari server
+  config.vm.define :ambari1 do |ambari1|
+    ambari1.vm.hostname = "ambari1.nvent.galvanize"
+    ambari1.vm.network :private_network, ip: "192.168.70.101"
+    
+    #ambariserver.sh is simply downloading ambari-server from the repo and installing it.
+    ambari1.vm.provision :shell, :path => "ambariserver.sh"
+  end
+
+#ambari2 and ambari3 will have the ambari agents.
+
+  config.vm.define :ambari2 do | ambari2 |
+    ambari2.vm.hostname = "ambari2.nvent.galvanize"
+    ambari2.vm.network :private_network, ip: "192.168.70.102"
+  end
+
+  config.vm.define :ambari3 do | ambari3 |
+    ambari3.vm.hostname = "ambari3.nvent.galvanize"
+    ambari3.vm.network :private_network, ip: "192.168.70.103"
+  end
+
+end
