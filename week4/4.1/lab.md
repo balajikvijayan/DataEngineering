@@ -1,5 +1,8 @@
 Lab
 ===============================
+
+Partition the data in `s3://dsci/6007/data/SuperWebAnalytics/new_data/` into a master dataset as follows:
+
 The unions within a graph schema provide a natural vertical partitioning scheme for a dataset.
 
     /data/
@@ -15,7 +18,7 @@ The unions within a graph schema provide a natural vertical partitioning scheme 
           page_link/
 
 Write a batch job to vertically partition avro data according to the above scheme.  
-*i.e.* Edges are partitioned according type. Properties are partitioned according to subtype.  
+*i.e.* Edges are partitioned according type. Properties are partitioned according to subtype.
 1. It is important that your solution scale horizontally. Writing a Python script load the data into memory and write it into different local files is easy. Writing a script that will leverage Hadoop or Spark's distributed architecture is a little more challenging.
 2. Don't forget about the small-files problem. 
 

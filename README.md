@@ -145,17 +145,17 @@ Tentative Schedule
     2. Intro to Hive
     3. Distributed Machine Learning
     4. Generating Batch Views
-5. Serving Layer
+5. Hive & HBase
     1. Batch Layer Level Assessment
     2. Advanced Hive
     3. Intro to NoSQL and HBase
     4. Advanced HBase
-6. Speed Layer
+6. Serving Layer
     1. MPP RDBMS
     2. Spark SQL and the Serving Layer
     3. Serving Layer Level Assessment
     4. Queueing with Kafka
-7. Lambda Architecture
+7. Speed Layer
     1. Micro-batch Stream Processing with Spark
     2. Generating Realtime Views
     3. Speed Layer Level Asessment
