@@ -11,14 +11,18 @@ Leave the other session running the Bash shell.
 
 ## Step 2: Upload Movielens Data to HDFS
 
-Download the MovieLens data files from the web (`ml-latest-small`).
+Download the MovieLens data files from
+<http://files.grouplens.org/datasets/movielens/ml-latest-small.zip>
+and unzip it.
 
-Unzip it and upload these files into HDFS:
+This should produce the following files.
 
 - `links.csv`
 - `movies.csv`
 - `ratings.csv`
 - `tags.csv`
+
+Upload them into HDFS.
 
 ## Step 3: Create Tables
 
