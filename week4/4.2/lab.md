@@ -6,8 +6,7 @@ Start 2 `ssh` session2 into it.
 
 Start the Hive shell in one session.
 
-Leave the other session running the Bash shell. 
-
+Leave the other session running the Bash shell.
 
 ## Step 2: Upload Movielens Data to HDFS
 
@@ -22,7 +21,16 @@ This should produce the following files.
 - `ratings.csv`
 - `tags.csv`
 
-Upload them into HDFS.
+Look at the first few lines of each file.
+
+Create the following dirs in HDFS: 
+
+- `/user/root/links` 
+- `/user/root/movies` 
+- `/user/root/ratings` 
+- `/user/root/tags`
+
+Upload each CSV files into its directory in HDFS.
 
 ## Step 3: Create Tables
 
@@ -35,11 +43,12 @@ File           |First Line
 `ratings.csv`  |`userId,movieId,rating,timestamp`
 `tags.csv `    |`userId,movieId,tag,timestamp`
 
-Execute `CREATE TABLE` commands to create internal tables for each of
-these files.
+Execute `CREATE EXTERNAL TABLE` commands to create external tables for
+each of these files. Ingest the data into the tables.
 
-Use `DESCRIBE FORMATTED` to verify that the tables are created
-correctly.
+Use `DESCRIBE X` to verify that the tables were created correctly. Use
+`SELECT * FROM X LIMIT 5` to verify that the data was ingested
+correctly from HDFS. Replace `X` with the table name in the commands.
 
 ## Step 4: Hive Queries
 
@@ -61,4 +70,5 @@ Write Hive Queries to perform the following actions.
 
 - When you are done drop the tables.
 
-- Do you need to do anything else to get rid of the data?
+- Do you need to do anything else to get rid of the data in HDFS?
+
