@@ -1,5 +1,3 @@
-% Hive
-
 Data Formats
 ============
 
