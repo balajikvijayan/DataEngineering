@@ -353,6 +353,50 @@ Is it possible to do better than this?
 - *Partitioned* and *Bucketed* tables are some ways of laying out HDFS
   directories and files to speed up queries.
 
+
+Analogy
+-------
+
+What are some ways of keeping your socks organized?
+
+- There is a tradeoff between storage and retrieval optimization.
+
+
+Hive Default
+------------
+
+<img src="images/hive-socks-default.jpg">
+
+Solution 1: Dump all sock in big drawer.
+
+- This is Hive's default behavior.
+
+- Optimizes storage, but not retrieval.
+
+Partitioning
+------------
+
+<img src="images/hive-socks-partitioned.jpg">
+
+
+Solution 2: Have separate bin for each color.
+
+- This is partitioning.
+
+- Optimizes retrieval, but not storage.
+
+Bucketing
+---------
+
+<img src="images/hive-socks-bucketed.jpg">
+
+Solution 3: Have 2 bins. Black and white go in right bin. Other colors
+go in left bin.
+
+- This is bucketing.
+
+- Balances both storage and retrieval.
+
 Partitioned Tables
 ==================
 
