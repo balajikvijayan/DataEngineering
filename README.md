@@ -3,6 +3,7 @@ DSCI6007: Distributed and Scalable Data Engineering
 **Instructors:**  
 * [Alessandro Gagliardi](mailto:alessandro@galvanize.com)  
 * [Asim Jalis](mailto:asim.jalis@galvanize.com) (Guest Lecturer)  
+* [Brian Spiering](mailto:brian.spiering@galvanize.com)
 * [Mike Tamir](mailto:mtamir@galvanize.com)  
 
 **Class Location:** 44 Tehama St, 3rd Floor, gU Classroom  
@@ -146,17 +147,17 @@ Tentative Schedule
     3. Distributed Machine Learning
     4. Generating Batch Views
 5. Hive & HBase
-    1. Batch Layer Level Assessment
+    1. Mid-Term Review
     2. Advanced Hive
-    3. Intro to NoSQL and HBase
-    4. Advanced HBase
+    3. Spark SQL
+    4. Intro to NoSQL and HBase
 6. Serving Layer
-    1. MPP RDBMS
-    2. Spark SQL and the Serving Layer
-    3. Serving Layer Level Assessment
-    4. Queueing with Kafka
+    1. Batch Layer Level Assessment
+    2. Implementing the Serving Layer
+    3. Queueing with Kafka
+    4. Micro-batch Stream Processing with Spark
 7. Speed Layer
-    1. Micro-batch Stream Processing with Spark
+    1. Serving Layer Level Assessment
     2. Generating Realtime Views
     3. Speed Layer Level Asessment
     4. Advanced Lambda Architecture
