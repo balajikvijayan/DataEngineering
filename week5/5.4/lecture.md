@@ -656,20 +656,3 @@ recover from this?
 
 - If the WAL write fails the operation to modify the data fails.
 
-
-<!--
-
-Add note about hbase-start failure
-
-
-Think about questions and interaction: how can we turn this into
-questions?
-
-
-Row Key Design
-
-- Look at Access Pattern
-- What is Hotspotting 
-- How to Avoid Hotspotting
-
--->
