@@ -344,9 +344,8 @@ Pop Quiz: Excel
 <details><summary>
 How would you map an Excel spreadsheet to an HBase table? Assume the
 rows in Excel will be rows in HBase, and there are two column
-families: `d` for columsn `A` through `Z` and `e` for the other
+families: `d` for columns `A` through `Z` and `e` for the other
 columns.
-called `d`.
 </summary>
 1. The row keys will be the row numbers: 1, 2, 3, ...<br>
 2. The column names will be `d:A`, `d:B`, ..., `d:Z`, `e:AA`, `e:AB`, ... <br>
@@ -495,6 +494,7 @@ $LOAD_PATH << hj_path
 require 'hbase-jruby'
 
 # Get table.
+hbase = HBase.new
 sales = hbase.table('sales')
 
 # Get specific row.
@@ -656,3 +656,20 @@ recover from this?
 
 - If the WAL write fails the operation to modify the data fails.
 
+
+<!--
+
+Add note about hbase-start failure
+
+
+Think about questions and interaction: how can we turn this into
+questions?
+
+
+Row Key Design
+
+- Look at Access Pattern
+- What is Hotspotting 
+- How to Avoid Hotspotting
+
+-->
