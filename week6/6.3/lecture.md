@@ -475,20 +475,10 @@ You can create topics using the command line `kafka-topics.sh` tool.
 ```bash
 ./bin/kafka-topics.sh \
   --zookeeper localhost:2181 \
-  --create \
   --topic my-topic \
+  --create \
   --replication-factor 1 \
   --partitions 1
-```
-
-The default values of `--replication-factor` and `--partitions`  is
-`1` so they can be left out.
-  
-```bash
-./bin/kafka-topics.sh \
-  --zookeeper localhost:2181 \
-  --create \
-  --topic my-topic
 ```
 
 Changing Topic Configuration
@@ -543,11 +533,15 @@ How can I delete a topic?
   --delete 
 ```
 
+Note: `--delete` was [broken][jira-delete-broken] until version `0.8.2.0`
+
+[jira-delete-broken]: https://issues.apache.org/jira/browse/KAFKA-1397
+
 Kafka API
 =========
 
-Sending Receiving Strings
--------------------------
+Sending and Receiving Strings
+-----------------------------
 
 How can I use Kafka to send and receive strings?
 
@@ -593,13 +587,13 @@ if __name__ == "__main__":
     main()
 ```
 
-Kafka, Avro
------------
+Kafka and Avro
+--------------
 
 <img src="images/kafka-avro.png">
 
-Kafka, Avro
------------
+Kafka and Avro
+--------------
 
 Why is Avro relevant to Kafka?
 
@@ -612,8 +606,8 @@ Why is Avro relevant to Kafka?
 
 - Avro gives you efficient and portable serialization.
 
-Sending Receiving Using Avro
-----------------------------
+Sending and Receiving Avro
+--------------------------
 
 How can I use Kafka to send and receive arbitrary data structures?
 
@@ -642,9 +636,7 @@ AVRO_SCHEMA_STRING = '''{
 '''
 
 class AvroSerDe:
-    '''Utility class for serializing and deserializing data structures
-    using Avro.
-    '''
+    '''Serializes and deserializes data structures using Avro.'''
     def __init__(self, avro_schema_string):
         self.schema = avro.schema.parse(avro_schema_string)
         self.datum_writer = avro.io.DatumWriter(self.schema)
