@@ -22,6 +22,24 @@ What are events?
 
 - Like SQL records or CSV records.
 
+Objectives
+----------
+
+By the end of today's lesson, you will be able to:
+
+- Discuss what problem Kafka solves and why it exists
+
+- Discuss what problems Kafka does not solve, and for which you need
+  to integrate it with HBase and Spark Streaming.
+
+- Install and launch Kafka. 
+
+- Implement Kafka to handle heavy message volumes using *partitions*,
+  *consumer groups*, and *replication*.
+
+- Implement Kafka *producers* and *consumers* that can send and
+  receive messages through Kafka. 
+
 Etymology
 ---------
 
