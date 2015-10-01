@@ -12,14 +12,25 @@ Bring up the HBase shell.
 
 Type `puts "hello world"` and see that it works.
 
+Follow the steps in the lecture notes.
+
 Step 2: Download Data
 ---------------------
 
-Download stock data for these companies: AAPL, GOOG, AMZN, MSFT
+Download stock data for these companies: AAPL, AMZN, GOOG, MSFT
 
 Here is how to get the stock for AAPL, for example:
 
 <http://real-chart.finance.yahoo.com/table.csv?s=AAPL&g=d&ignore=.csv>
+
+```bash
+# Download CSV files for all companies.
+for SYMBOL in AAPL AMZN GOOG MSFT; do
+  echo "${SYMBOL}: Writing ${SYMBOL}.csv"
+  URL="http://real-chart.finance.yahoo.com/table.csv?s=${SYMBOL}&g=d&ignore=.csv"
+  curl -L ${URL} > ${SYMBOL}.csv
+done
+```
 
 Step 3: Design Row Key
 ----------------------
@@ -38,8 +49,9 @@ upload the CSV data into HBase.
 Step 5: Calculate Statistics
 ----------------------------
 
-Use `scan` to go through the data for each company and calculate the
-minimum, maximum, and average prices for each company, for each month.
+Use `scan` (or the `range` function in `hbase-jruby`) to go through
+the data for each company and calculate the minimum, maximum, and
+average prices for each company across all time.
 
 Step 6: Row Key Redesign 
 ------------------------
@@ -54,9 +66,6 @@ of this index fund.
 What row key should they use? 
 
 Design the system that would calculate the minimum, maximum, and
-average price of the index fund per month.
+average price of the index fund.
 
-Step 7: Extra Credit
---------------------
-
-Implement the system you designed in the last step.
+- The row key in this case must be `date:stock`
