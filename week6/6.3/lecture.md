@@ -480,6 +480,105 @@ how many copies of each message in this topic exist in Kafka?
 </details>
 
 
+Installing Kafka
+================
+
+Downloading
+-----------
+
+How can I download Kafka?
+
+- Go to <http://kafka.apache.org/downloads.html>
+
+- Download the version labeled `Scala 2.10 - kafka_2.10-0.8.2.0.tgz (asc, md5)
+
+- This is the version Kafka's
+  [quickstart](http://kafka.apache.org/documentation.html#quickstart)
+  recommends.
+
+- Uncompress and untar the binary. Then switch to expanded directory.
+
+```bash
+tar xvzf kafka_2.10-0.8.2.0.tgz 
+cd kafka_2.10-0.8.2.0
+```
+
+[kafka-quickstart]: 
+
+Launching
+---------
+
+What are the steps for launching Kafka?
+
+- Start Zookeeper unless you already have it running. 
+
+```bash
+./bin/zookeeper-server-start.sh config/zookeeper.properties
+```
+
+- Start the Kafka server which will launch the brokers.
+
+```bash
+./bin/kafka-server-start.sh config/server.properties
+```
+
+Kick Tires
+----------
+
+Let's take Kafka out for a spin. Kafka has command line producers and
+consumers that you can use to test it.
+
+- Create a topic.
+
+```bash
+./bin/kafka-topics.sh \
+  --zookeeper localhost:2181 \
+  --topic test \
+  --create \
+  --replication-factor 1 \
+  --partitions 1
+```
+
+- See that the topic was created.
+
+```bash
+./bin/kafka-topics.sh  \
+  --zookeeper localhost:2181 \
+  --list
+```
+
+- Publish hello world message through command line producer.
+
+```bash
+echo 'hello world' | \
+  ./bin/kafka-console-producer.sh \
+    --broker-list localhost:9092 \
+    --topic test 
+```
+
+- Ignore warning `WARN Property topic is not valid (kafka.utils.VerifiableProperties)`. 
+
+- This is a [known bug](https://issues.apache.org/jira/browse/KAFKA-1711).
+
+- Consume message through command line consumer.
+
+```bash
+./bin/kafka-console-consumer.sh \
+  --zookeeper localhost:2181 \
+  --topic test \
+  --from-beginning
+```
+
+Help
+----
+
+What other options do these command line tools have?
+
+- For help on these command line tools run them without any arguments.
+
+- They will list out all their options and what effect they have.
+
+
 Kafka Commands
 ==============
 
@@ -551,9 +650,9 @@ How can I delete a topic?
   --delete 
 ```
 
-Note: `--delete` was [broken][jira-delete-broken] until version `0.8.2.0`
-
-[jira-delete-broken]: https://issues.apache.org/jira/browse/KAFKA-1397
+Note: `--delete` was
+[broken](https://issues.apache.org/jira/browse/KAFKA-1397) until
+version `0.8.2.0`.
 
 Kafka API
 =========
