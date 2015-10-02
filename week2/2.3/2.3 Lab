@@ -1,0 +1,31 @@
+Create an account
+Link other social media accounts
+Clear search history
+Log out/in
+View about information
+Access help center
+Report a problem
+Update account settings
+Find more friends/contacts
+Invite friends
+Post a picture/video
+Like a picture/video
+Share a picture/video
+Search
+
+1. Balaji created account 'a' at datetime.
+2. Balaji linked their social media account 'b' from FB at datetime.
+3. Balaji logged in/out at datetime.
+4. Balaji reported bug 'c' with text 'd' at datetime.
+5. Balaji updated account 'a' with text 'e' at datetime.
+6. Balaji posted picture 'f' with filter 'g' and text 'h' at datetime.
+7. Balaji liked picture 'f' at datetime.
+8. Balaji searched for user 'i' at datetime.
+9. Balaji searched for hashtag '#j' at datetime.
+
+Tables:
+Accounts
+Pictures
+Videos
+Hashtags
+Bugs

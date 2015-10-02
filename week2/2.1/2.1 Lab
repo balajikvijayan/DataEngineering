@@ -1,0 +1,5 @@
+curl -LO https://s3-us-west-2.amazonaws.com/dsci/6007/data/NASA_access_log_Jul95.gz 
+gunzip -c NASA_access_log_Jul95.gz | wc -l
+gunzip -c NASA_access_log_Jul95.gz | awk 'NF > 1 { print $(NF - 1); }' | grep [4][0-9][0-9] | wc -l
+gunzip -c NASA_access_log_Jul95.gz | awk 'NF > 1 { print $(NF - 1); }' | grep [5][0-9][0-9] | wc -l
+gunzip -c NASA_access_log_Jul95.gz | awk 'NF > 1 { print $(NF - 1); }' | sort | uniq -c

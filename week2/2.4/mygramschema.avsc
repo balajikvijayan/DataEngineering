@@ -1,0 +1,208 @@
+[
+    {
+        "namespace": "analytics.avro",
+        "type": "record",
+        "name": "Pedigree",
+        "fields": [{"name": "true_as_of_secs", "type": "int"}]
+    },
+    {
+        "namespace": "analytics.avro",
+        "type": "record",
+        "name": "PersonID",
+        "fields": [{"name": "person_id", "type": "string"}]
+    },
+    {
+        "namespace": "analytics.avro",
+        "type": "record",
+        "name": "MediaID",
+        "fields": [{"name": "media_id", "type": "int"}]
+    },
+    {
+        "namespace": "analytics.avro",
+        "type": "record",
+        "name": "HashtagID",
+        "fields": [{"name": "hashtag_id", "type": "string"}]
+    },
+    {
+        "namespace": "analytics.avro",
+        "type": "record",
+        "name": "PersonProperty",
+        "fields": [
+            {
+                "name": "id",
+                "type": "PersonID"
+            },
+            {
+                "name": "property",
+                "type": [
+                    {
+                        "type": "record",
+                        "name": "PersonPropertyValue1",
+                        "fields": [{"name": "website", "type": "string"}]
+                    },
+                    {
+                        "type": "record",
+                        "name": "PersonPropertyValue2",
+                        "fields": [{"name": "email", "type": ["string"]}]
+                    },
+                    {
+                        "type": "record",
+                        "name": "PersonPropertyValue3",
+                        "fields": [{"name": "desc", "type": ["string"]}]
+                    },
+                    {
+                        "type": "record",
+                        "name": "PersonPropertyValue4",
+                        "fields": [{"name": "name", "type": ["string"]}]
+                    },
+                    {
+                        "type": "record",
+                        "name": "PersonPropertyValue5",
+                        "fields": [{"name": "phone", "type": ["string"]}]
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "namespace": "analytics.avro",
+        "type": "record",
+        "name": "MediaProperty",
+        "fields": [
+            {
+                "name": "id",
+                "type": "MediaID"
+            },
+            {
+                "name": "property",
+                "type": [
+                    {
+                        "type": "record",
+                        "name": "MediaPropertyValue1",
+                        "fields": [{"name": "url", "type": ["string"]}]
+                    },
+                    {
+                        "type": "record",
+                        "name": "MediaPropertyValue2",
+                        "fields": [{"name": "desc", "type": ["string"]}]
+                    },
+                    {
+                        "type": "record",
+                        "name": "MediaPropertyValue3",
+                        "fields": [{"name": "type", "type": "boolean"}]
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "namespace": "analytics.avro",
+        "type": "record",
+        "name": "HashtagProperty",
+        "fields": [
+            {
+                "name": "id",
+                "type": "HashtagID"
+            },
+            {
+                "name": "property",
+                "type": [
+                    {
+                        "type": "record",
+                        "name": "HashtagPropertyValue1",
+                        "fields": [{"name": "searchcount", "type": ["int"]}]
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "namespace": "analytics.avro",
+        "type": "record",
+        "name": "FriendsEdge",
+        "fields": [
+            {"name": "id1", "type": "PersonID"},
+            {"name": "id2", "type": "PersonID"}
+        ]
+    },
+    {
+        "namespace": "analytics.avro",
+        "type": "record",
+        "name": "SearchesEdge",
+        "fields": [
+            {"name": "id1", "type": "PersonID"},
+            {"name": "id2", "type": "HashtagID"}
+        ]
+    },
+    {
+        "namespace": "analytics.avro",
+        "type": "record",
+        "name": "LikesEdge",
+        "fields": [
+            {"name": "id1", "type": "PersonID"},
+            {"name": "id2", "type": "MediaID"}
+        ]
+    },
+    {
+        "namespace": "analytics.avro",
+        "type": "record",
+        "name": "ContainsEdge",
+        "fields": [
+            {"name": "id1", "type": "MediaID"},
+            {"name": "id2", "type": "HashtagID"}
+        ]
+    },
+    {
+        "namespace": "analytics.avro",
+        "type": "record",
+        "name": "Data",
+        "fields": [
+            {
+                "name": "pedigree",
+                "type": "Pedigree"
+            },
+
+            
+            {
+                "name": "dataunit",
+                "type": [
+                    {
+                        "type": "record",
+                        "name": "DataUnit1",
+                        "fields": [{"name": "person_property", "type": "PersonProperty"}]
+                    },
+                    {
+                        "type": "record",
+                        "name": "DataUnit2",
+                        "fields": [{"name": "media_property", "type": "MediaProperty"}]
+                    },
+                    {
+                        "type": "record",
+                        "name": "DataUnit3",
+                        "fields": [{"name": "hashtag_property", "type": "HashtagProperty"}]
+                    },
+                    {
+                        "type": "record",
+                        "name": "DataUnit4",
+                        "fields": [{"name": "friends", "type": "FriendsEdge"}]
+                    },
+                    {
+                        "type": "record",
+                        "name": "DataUnit5",
+                        "fields": [{"name": "searches", "type": "SearchesEdge"}]
+                    },
+                    {
+                        "type": "record",
+                        "name": "DataUnit6",
+                        "fields": [{"name": "likes", "type": "LikesEdge"}]
+                    },
+                    {
+                        "type": "record",
+                        "name": "DataUnit7",
+                        "fields": [{"name": "contains", "type": "ContainsEdge"}]
+                    }
+                ]
+            }
+        ]
+    }
+]

@@ -1,0 +1,68 @@
+[
+    {
+        "namespace": "analytics.avro",
+        "type": "record",
+        "name": "Pedigree",
+        "fields": [{"name": "true_as_of_secs", "type": "int"}]
+    },
+    {
+        "namespace": "analytics.avro",
+        "type": "record",
+        "name": "PageID1",
+        "fields": [{"name": "url", "type": "string"}]
+    },
+    {
+        "namespace": "analytics.avro",
+        "type": "record",
+        "name": "PageProperty",
+        "fields": [
+            {
+                "name": "id",
+                "type": "PageID1"
+            },
+            {
+                "name": "property",
+                "type": {
+                    "type": "record",
+                    "name": "PagePropertyValue",
+                    "fields": [{"name": "page_views", "type": "int"}]
+                }
+            }
+        ]
+    },
+    {
+        "namespace": "analytics.avro",
+        "type": "record",
+        "name": "PageLinkEdge",
+        "fields": [
+            {"name": "source", "type": "PageID1"},
+            {"name": "target", "type": "PageID1"}
+        ]
+    },
+    {
+        "namespace": "analytics.avro",
+        "type": "record",
+        "name": "Data",
+        "fields": [
+            {
+                "name": "pedigree",
+                "type": "Pedigree"
+            },
+            {
+                "name": "dataunit",
+                "type": [
+                    {
+                        "type": "record",
+                        "name": "DataUnit2",
+                        "fields": [{"name": "page_property", "type": "PageProperty"}]
+                    },
+                    {
+                        "type": "record",
+                        "name": "DataUnit5",
+                        "fields": [{"name": "page_link", "type": "PageLinkEdge"}]
+                    }
+                ]
+            }
+        ]
+    }
+]
