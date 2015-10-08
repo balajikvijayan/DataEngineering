@@ -3,7 +3,7 @@ DSCI6007: Distributed and Scalable Data Engineering
 **Instructors:**  
 * [Alessandro Gagliardi](mailto:alessandro@galvanize.com)  
 * [Asim Jalis](mailto:asim.jalis@galvanize.com) (Guest Lecturer)  
-* [Brian Spiering](mailto:brian.spiering@galvanize.com)
+* [Brian Spiering](mailto:brian.spiering@galvanize.com)  
 * [Mike Tamir](mailto:mtamir@galvanize.com)  
 
 **Class Location:** 44 Tehama St, 3rd Floor, gU Classroom  
