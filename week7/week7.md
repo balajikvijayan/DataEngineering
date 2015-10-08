@@ -15,13 +15,13 @@ Week 7: Speed Layer
     - **Resources:**
         + [Spark Streaming with Kafka & HBase Example](http://henning.kropponline.de/2015/04/26/spark-streaming-with-kafka-hbase-example/)
 
-3. __Speed Layer Level Assessment__
+3. __Data Engineering in Review__
+    - **Standard:** Produce query-able Lambda Architecture
+        + Integrate speed & serving layers
+
+4. __Speed Layer Level Assessment__
     - **Before class:** Prep 10 min presentation showcasing your speed layer
     - **Standard:** Generalize speed layer to new problem
 		+ Enable multi-consumer queues using Kafka
 		+ Achieve exactly-one semantics in streaming
 		+ Store realtime views in HBase
-
-4. __Advanced Lambda Architecture__
-	- **Standard:** Produce query-able Lambda Architecture
-		+ Integrate speed & serving layers
