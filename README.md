@@ -46,7 +46,6 @@ By the end of this course, you will be able to:
 * Develop and implement a DAG for batch processing
 * Generalize batch layer methodology to a new problem
 * Serve queries to the batch layer using Hive
-* Configure and deploy a massively parallel processing RDBMS
 * Use SparkSQL to query batch views
 * Generalize serving layer methodology to a new problem
 * Build a horizontally scalable queueing and streaming system using Kafka
@@ -87,7 +86,7 @@ Much of the curriculum is adapted from [Big Data](http://www.manning.com/marz/) 
 
 Spark and Hadoop are the technologies we will be using most throughout the course. There are many books on both (including some in our own library) that can help including [Hadoop: the Definitive Guide](http://shop.oreilly.com/product/0636920033448.do), [Learning Spark](http://shop.oreilly.com/product/0636920028512.do) and [Advanced Analytics with Spark](http://shop.oreilly.com/product/0636920035091.do). Berkeley's AMPLab also has a good [tutorial](http://ampcamp.berkeley.edu/big-data-mini-course/index.html) for Spark.
 
-Other technologies that will be used include [PostgreSQL](http://www.postgresql.org/), [StarCluster](http://star.mit.edu/cluster/), [Avro](https://avro.apache.org/), [Hive](https://hive.apache.org/), [HBase](http://hbase.apache.org/), [Kafka](http://kafka.apache.org/), and [Redshift](https://aws.amazon.com/redshift/).
+Other technologies that will be used include [PostgreSQL](http://www.postgresql.org/), [StarCluster](http://star.mit.edu/cluster/), [Avro](https://avro.apache.org/), [Hive](https://hive.apache.org/), [HBase](http://hbase.apache.org/), and [Kafka](http://kafka.apache.org/).
 
 Grading
 --------------------------------------------------------------  
@@ -159,6 +158,6 @@ Tentative Schedule
 7. Speed Layer
     1. Serving Layer Level Assessment
     2. Generating Realtime Views
-    3. Speed Layer Level Asessment
-    4. Advanced Lambda Architecture
+    3. Data Engineering in Review
+    4. Speed Layer Level Asessment
 8. Final: Summative Assessment
